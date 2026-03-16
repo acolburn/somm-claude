@@ -203,8 +203,7 @@ export default function WinePairingForm() {
     <section className="wine-form-container">
       <h1>What wine pairs well with my meal?</h1>
       <p>
-        Check the items that describe the parts of your meal you want to pair
-        with wine:
+        Choose the dish elements you'd like to pair with wine:
       </p>
       <form onSubmit={getAWine}>
         <fieldset>
