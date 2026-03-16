@@ -11,7 +11,6 @@ body {
   font-size: 1.1rem;
 }
 
-
 header {
   display: flex;
   justify-content: center;
@@ -111,7 +110,16 @@ p {
   line-height: 20px;
 } */
 
-.wine-form-container button {
+.submit-button-container {
+  padding-left: 1.1rem;
+  margin-bottom: 1rem;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.submit-button-container button {
   border: none;
   border-radius: 6px;
   background: #800000;
@@ -122,6 +130,25 @@ p {
   font-family: Inter, sans-serif;
   font-size: 1.125rem;
   cursor: pointer;
+}
+
+.loading-indicator {
+  display: inline-block;
+  margin-left: 10px; /* Space between the button and the loading indicator */
+  font-size: 1rem; /* Font size of the loading message */
+  color: #800000; /* Text color; can adjust to your theme */
+  font-weight: bold; /* Bold text for emphasis */
+  animation: fade 1.5s infinite; /* Animation for fading effect */
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0.5; /* Start and end with half transparency */
+  }
+  50% {
+    opacity: 1; /* Full opacity in the middle */
+  }
 }
 
 /* for label and checkbox alignment */

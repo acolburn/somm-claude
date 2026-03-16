@@ -12,6 +12,7 @@ export default function WinePairingForm() {
   //   });
 
   const [wineRecommendations, setWineRecommendations] = useState("");
+  const [loading, setLoading] = useState("idle"); // 'idle' | 'loading' | 'done'
 
   const categories = {
     protein: [
@@ -170,6 +171,7 @@ export default function WinePairingForm() {
   }
 
   async function callClaude(myPrompt) {
+    setLoading("loading");
     try {
       // Send the prompt to your Netlify Function
       const response = await fetch(
@@ -199,15 +201,15 @@ export default function WinePairingForm() {
       }
     } catch (error) {
       console.error("Fetch error:", error);
+    } finally {
+      setLoading("done");
     }
   }
 
   return (
     <section className="wine-form-container">
       <h1>What wine pairs well with my meal?</h1>
-      <p>
-        Choose the dish elements you'd like to pair with wine:
-      </p>
+      <p>Choose the dish elements you'd like to pair with wine:</p>
       <form onSubmit={getAWine}>
         <fieldset>
           <legend>What proteins are we featuring?</legend>
@@ -237,7 +239,15 @@ export default function WinePairingForm() {
           Anything else Claude should know? <br />
         </label>
         <textarea id="additional-info" name="additional-info"></textarea>
-        <button>Find Me A Wine!</button>
+        <div className="submit-button-container">
+          <button>Find Me A Wine!</button>
+          {loading === "loading" && (
+            <span className="loading-indicator">Claude is thinking...</span>
+          )}
+          {loading === "done" && (
+            <span className="loading-indicator">Ready! Scroll down.</span>
+          )}
+        </div>
       </form>
       {wineRecommendations && <ClaudeResults wines={wineRecommendations} />}
     </section>
