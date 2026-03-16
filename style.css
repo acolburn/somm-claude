@@ -5,10 +5,12 @@
 body {
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 0.5rem;
   font-family: Inter, sans-serif;
   background-color: #fafaf8;
   font-size: 1.1rem;
 }
+
 
 header {
   display: flex;
