@@ -33,8 +33,9 @@ export default function WinePairingForm() {
       "Spicy/chili-based",
       "Sweet glaze or BBQ sauce",
       "Vinegar or acidic",
-      "Classic Indian (cumin, turmeric, garam masala, etc.)",
-      "Chinese brown (soy, garlic, ginger, Oyster sauce, etc.)",
+      "Indian (cumin, turmeric, garam masala, etc.)",
+      "Cantonese (soy, garlic, ginger, Oyster sauce, etc.)",
+      "Thai (coconut milk, lemongrass, fish sauce, etc.)",
       "No sauce (plain/grilled)",
     ],
     intensity: ["Mild/delicate", "Moderate", "Bold/strong"],
@@ -236,7 +237,9 @@ export default function WinePairingForm() {
           {makeCookingCheckboxes()}
         </fieldset>
         <label htmlFor="additional-info">
-          Anything else Claude should know? <br />
+          <div className="maroon">
+            Anything else Claude should know? <br />
+          </div>
         </label>
         <textarea id="additional-info" name="additional-info"></textarea>
         <div className="submit-button-container">

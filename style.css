@@ -54,6 +54,13 @@ p {
   line-height: 20px;
   margin-bottom: 1rem;
 }
+
+.maroon {
+  color: #800000;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
 /* .add-ingredient-form > input {
   border-radius: 6px;
   border: 1px solid #d1d5db;
