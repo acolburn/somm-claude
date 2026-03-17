@@ -238,7 +238,7 @@ export default function WinePairingForm() {
         </fieldset>
         <label htmlFor="additional-info">
           <div className="maroon">
-            Anything else Claude should know? <br />
+            What are you having? Anything else Claude should know? <br />
           </div>
         </label>
         <textarea id="additional-info" name="additional-info"></textarea>
